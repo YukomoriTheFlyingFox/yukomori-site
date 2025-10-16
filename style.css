@@ -54,9 +54,11 @@ header, section {
 } */
 
 /* Masquer la scrollbar sur certains navigateurs (optionnel) */
+/*
 .cards-container::-webkit-scrollbar {
   display: none;
 }
+*/
 
 /* Grille de cartes (max 4 par ligne) */
 .cards-container {
