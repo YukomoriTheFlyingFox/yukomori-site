@@ -1,55 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yukomori – Accueil</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yukomori — Caverne créative</title>
+  <meta name="description" content="Espace personnel de Yukomori — personnages, projets, journal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Ici tu gardes tout ton style CSS actuel, inchangé */
+  </style>
 </head>
 <body>
-
-  <!-- SECTION ACCUEIL -->
   <header>
-    <h1>Salut, je suis Yukomori !</h1>
-    <p>
-      Passionné du dessin et du code, j'ai la fierté de lancer mon propre site d'internet !  
-      Ici vous trouverez tous mes projets créatifs que je fais et que je ne partage pas dans les autres sites d’internet faute de règles absurdes.  
-      Donc vous êtes prêts à découvrir ma caverne ?
-    </p>
+    <div class="brand">
+      <div class="logo">YK</div>
+      <div>
+        <h1>Yukomori</h1>
+        <p>La caverne créative — privé, mais partageable</p>
+      </div>
+    </div>
+    <nav id="nav">
+      <button data-target="home" class="active">Accueil</button>
+      <button data-target="characters">Personnages</button>
+      <button data-target="projects">Projets</button>
+      <button data-target="journal">Journal</button>
+      <button data-target="contact">Contact</button>
+    </nav>
   </header>
 
-  <!-- SECTION PERSONNAGES -->
-  <section id="personnages">
-    <h2>Mes personnages</h2>
-    
-    <!-- Exemple de personnage -->
-    <div class="personnage">
-      <!-- 🖼️ Ici tu mets ton image avec src -->
-      <img src="images/yukomori.png" alt="Yukomori">
-      <!-- ↑ Crée un dossier 'images' à la racine et mets ton image dedans -->
-      <h3>Yukomori</h3>
-      <p>La chauve-souris roussette curieuse et espiègle.</p>
-    </div>
+  <main id="app">
+    <!-- HOME -->
+    <section id="home" class="view">
+      <div class="hero">
+        <div class="intro card">
+          <h2>Bienvenue dans ma caverne.</h2>
+          <p>
+            Salut, je suis <strong>Yukomori</strong> ! Passionné du dessin et du code,  
+            j'ai la fierté de lancer mon propre site d’internet !  
+            Ici vous trouverez tous mes projets créatifs que je fais et que je ne partage pas dans les autres sites d’internet faute de règles absurdes.  
+            Donc vous êtes prêts à découvrir ma caverne ?
+          </p>
+          <div class="stat">
+            <div class="pill">Univers: nocturne & paisible</div>
+            <div class="pill">Accès: public discret</div>
+            <div class="pill">Style: cartes minimalistes</div>
+          </div>
+        </div>
 
-    <div class="personnage">
-      <img src="images/razle.png" alt="Razle">
-      <h3>Razle</h3>
-      <p>L’ancien sbire de Scalindra qui a décidé de suivre son propre chemin.</p>
-    </div>
+        <aside class="avatar card">
+          <div class="yuk">🦇</div>
+          <p>YUKOMORI — chauve‑souris roussette</p>
+          <small class="muted">Partage uniquement avec ceux que tu choisis. Le lien suffit.</small>
+        </aside>
+      </div>
 
-    <!-- Pour ajouter d’autres personnages : copier ce bloc
-    <div class="personnage">
-      <img src="images/nom-du-personnage.png" alt="Nom du personnage">
-      <h3>Nom du personnage</h3>
-      <p>Description rapide du personnage.</p>
-    </div>
-    -->
-  </section>
+      <div class="grid">
+        <article class="card">
+          <h3>À propos</h3>
+          <p class="muted">Un espace personnel, sans algorithme. Place pour mes personnages, mes projets et mes pensées.</p>
+        </article>
 
-  <!-- PIED DE PAGE -->
+        <article class="card">
+          <h3>Style visuel</h3>
+          <p class="muted">Nocturne, chaud, minimal. Palette inspirée de la terre et du feu discret.</p>
+        </article>
+
+        <article class="card">
+          <h3>Hébergement</h3>
+          <p class="muted">Fichier statique simple — hébergeable n'importe où. Je peux t'aider à le mettre sur GitHub Pages.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHARACTERS -->
+    <section id="characters" class="view" style="display:none">
+      <div class="toolbar card" style="display:flex;align-items:center">
+        <input class="search" id="charSearch" placeholder="Filtrer les personnages..." />
+        <button class="btn" onclick="addPlaceholder('characters')">+ Ajouter</button>
+      </div>
+
+      <div class="grid" id="charactersGrid">
+        <!-- Exemple avec image intégrée -->
+        <article class="card person" data-name="Yukomori">
+          <div class="thumb">
+            <!-- ✅ Image du personnage -->
+            <img src="images/yukomori.png" alt="Yukomori" style="width:100%;height:100%;border-radius:10px;">
+          </div>
+          <div>
+            <h3>Yukomori</h3>
+            <div class="meta">Chauve‑souris roussette — protagoniste</div>
+            <p class="small muted">Design: fourrure orange terreux, oreilles gris chaud. Cherche la rédemption et des amis.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Le reste des sections (Projects, Journal, Contact) inchangé -->
+  </main>
+
   <footer>
-    <p>© 2025 Yukomori – Le monde appartient à ceux qui le rêvent. 🦇</p>
+    <div class="card" style="padding:12px;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <strong>Yukomori</strong> — espace perso. Partage avec parcimonie.
+      </div>
+      <div class="muted small">Prototype • Modifie librement • Hébergement recommandé: GitHub Pages</div>
+    </div>
   </footer>
 
+  <!-- 🔗 Script externe -->
+  <script src="script.js"></script>
 </body>
 </html>
