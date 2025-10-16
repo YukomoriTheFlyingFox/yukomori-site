@@ -36,7 +36,7 @@ header, section {
 }
 
 /* Cartes personnages */
-.card {
+/*.card {
   background-color: #1a1a2e;
   padding: 1rem;
   margin: 1rem auto;
@@ -51,7 +51,7 @@ header, section {
 .card p {
   font-size: 0.9rem;
   color: #ccc;
-}
+} */
 
 /* Container horizontal */
 .cards-container {
