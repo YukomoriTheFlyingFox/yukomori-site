@@ -53,15 +53,6 @@ header, section {
   color: #ccc;
 } */
 
-/* Container horizontal */
-.cards-container {
-  display: flex;            /* Aligne les cartes horizontalement */
-  overflow-x: auto;         /* Permet le scroll horizontal si trop de cartes */
-  gap: 2rem;                /* Espace entre les cartes */
-  padding: 2rem;
-  scroll-behavior: smooth;  /* Scroll doux */
-}
-
 /* Masquer la scrollbar sur certains navigateurs (optionnel) */
 .cards-container::-webkit-scrollbar {
   display: none;
@@ -69,8 +60,6 @@ header, section {
 
 /* Grille de cartes (max 4 par ligne) */
 .cards-container {
-  -ms-overflow-style: none;  /* IE 10+ */
-  scrollbar-width: none;     /* Firefox */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* max 4 par ligne */
   gap: 2rem;
