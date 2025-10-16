@@ -1,260 +1,27 @@
-<!-- Yukomori — Site prototype v1
-
-Instructions rapides :
-- Ceci est un site statique (un seul fichier HTML). Copie-colle dans un fichier `index.html`.
-- Hébergement rapide : GitHub Pages, Netlify ou Vercel (tu maîtrises déjà le déploiement).
-- Personnalise les sections "Personnages", "Projets" et "Journal" en modifiant les <article> correspondants.
-
-Palette nocturne & paisible : orange terreux (#D07A2A), gris chaud (#8B8680), noir profond (#0B0B0D), beige doux (#F4EDE6).
-Layout : site minimaliste en cartes, navigation top, responsive.
--->
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yukomori — Caverne créative</title>
-  <meta name="description" content="Espace personnel de Yukomori — personnages, projets, journal." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#07070a;
-      --card:#0f1114;
-      --accent:#D07A2A; /* orange terreux */
-      --muted:#8B8680; /* gris chaud */
-      --soft:#F4EDE6; /* beige doux */
-      --glass:rgba(255,255,255,0.03);
-      --radius:14px;
-      color-scheme: dark;
-    }
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;font-size:16px;background:radial-gradient(1200px 600px at 10% 10%, rgba(208,122,42,0.06), transparent), var(--bg);color:var(--soft);}
-    *{box-sizing:border-box}
-
-    header{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px);position:sticky;top:0;z-index:40}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffb36b);display:flex;align-items:center;justify-content:center;font-weight:800;color:#130f0a}
-    .brand h1{margin:0;font-size:18px;letter-spacing:0.6px}
-    .brand p{margin:0;font-size:12px;color:var(--muted)}
-
-    nav{display:flex;gap:10px;align-items:center}
-    nav button{background:transparent;border:0;color:var(--muted);padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer}
-    nav button.active{color:var(--soft);background:linear-gradient(90deg, rgba(208,122,42,0.12), rgba(255,179,107,0.06))}
-
-    main{max-width:1100px;margin:38px auto;padding:20px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.03)}
-    .card h3{margin:0 0 8px 0}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:center;margin-bottom:24px}
-    .hero .intro{padding:20px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
-    .hero h2{margin:0 0 6px 0;font-size:28px}
-    .hero p{margin:0;color:var(--muted)}
-    .stat{display:flex;gap:10px;margin-top:16px}
-    .stat .pill{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--soft);font-weight:600;font-size:13px}
-
-    .avatar{background:linear-gradient(135deg,var(--accent),#ffb36b);height:100%;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px}
-    .avatar .yuk{flex:1;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:#130f0a}
-    .avatar p{margin:0;color:#130f0a;font-weight:700}
-
-    /* Cards specifics */
-    .person{display:flex;gap:12px;align-items:flex-start}
-    .person .thumb{width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;font-weight:700}
-    .meta{color:var(--muted);font-size:13px}
-
-    footer{max-width:1100px;margin:26px auto;padding:20px;color:var(--muted);font-size:14px}
-
-    /* small screens */
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr}
-      .avatar{order:-1}
-    }
-
-    /* tiny helpers */
-    .muted{color:var(--muted)}
-    .small{font-size:13px}
-    .btn{background:var(--accent);color:#130f0a;padding:8px 12px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
-    .linklike{background:transparent;border:0;color:var(--accent);text-decoration:underline;cursor:pointer}
-
-    /* search / filter */
-    .toolbar{display:flex;gap:10px;align-items:center;margin-bottom:12px}
-    .search{flex:1;padding:10px;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--soft)}
-
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Yukomori</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Menu simple -->
+  <nav>
+    <a href="index.html">Accueil</a> |
+    <a href="personnages.html">Personnages</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Section Accueil -->
   <header>
-    <div class="brand">
-      <div class="logo">YK</div>
-      <div>
-        <h1>Yukomori</h1>
-        <p>La caverne créative — privé, mais partageable</p>
-      </div>
-    </div>
-    <nav id="nav">
-      <button data-target="home" class="active">Accueil</button>
-      <button data-target="characters">Personnages</button>
-      <button data-target="projects">Projets</button>
-      <button data-target="journal">Journal</button>
-      <button data-target="contact">Contact</button>
-    </nav>
+    <h1>Salut, je suis Yukomori !</h1>
+    <p>
+      Passionné du dessin et du code, j'ai la fierté de lancer mon propre site d’internet !  
+      Ici vous trouverez tous mes projets créatifs que je fais et que je ne partage pas dans les autres sites d’internet faute de règles absurdes.  
+      Alors, êtes-vous prêts à découvrir ma caverne ?
+    </p>
   </header>
-
-  <main id="app">
-    <!-- HOME -->
-    <section id="home" class="view">
-      <div class="hero">
-        <div class="intro card">
-          <h2>Bienvenue dans ma caverne.</h2>
-          <p>Salut, je suis <strong>Yukomori</strong> ! Passionné du dessin et du code,  
-            j'ai la fierté de lancer mon propre site d’internet !  
-            Ici vous trouverez tous mes projets créatifs que je fais et que je ne partage pas dans les autres sites d’internet faute de règles absurdes.  
-            Donc vous êtes prêts à découvrir ma caverne ?</p>
-          <div class="stat">
-            <div class="pill">Univers: nocturne & paisible</div>
-            <div class="pill">Accès: public discret</div>
-            <div class="pill">Style: cartes minimalistes</div>
-          </div>
-        </div>
-
-        <aside class="avatar card">
-          <div class="yuk">🦇</div>
-          <p>YUKOMORI — chauve‑souris roussette</p>
-          <small class="muted">Partage uniquement avec ceux que tu choisis. Le lien suffit.</small>
-        </aside>
-      </div>
-
-      <div class="grid">
-        <article class="card">
-          <h3>À propos</h3>
-          <p class="muted">Un espace personnel, sans algorithme. Place pour mes personnages, mes projets et mes pensées.</p>
-        </article>
-
-        <article class="card">
-          <h3>Style visuel</h3>
-          <p class="muted">Nocturne, chaud, minimal. Palette inspirée de la terre et du feu discret.</p>
-        </article>
-
-        <article class="card">
-          <h3>Hébergement</h3>
-          <p class="muted">Fichier statique simple — hébergeable n'importe où. Je peux t'aider à le mettre sur GitHub Pages.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- CHARACTERS -->
-    <section id="characters" class="view" style="display:none">
-      <div class="toolbar card" style="display:flex;align-items:center">
-        <input class="search" id="charSearch" placeholder="Filtrer les personnages..." />
-        <button class="btn" onclick="addPlaceholder('characters')">+ Ajouter</button>
-      </div>
-
-      <div class="grid" id="charactersGrid">
-        <!-- Yukomori -->
-        <article class="card person" data-name="Yukomori">
-          <div class="thumb">YK</div>
-          <div>
-            <h3>Yukomori</h3>
-            <div class="meta">Chauve‑souris roussette — protagoniste</div>
-            <p class="small muted">Design: fourrure orange terreux, oreilles gris chaud. Cherche la rédemption et des amis.</p>
-          </div>
-        </article>
-
-        <!-- Razle -->
-        <article class="card person" data-name="Razle">
-          <div class="thumb">RZ</div>
-          <div>
-            <h3>Razle</h3>
-            <div class="meta">Ancien sbire, maintenant ami</div>
-            <p class="small muted">S'est échappé de l'armée de Scalindra pour une vie meilleure — pas d'ailes, trois crêtes d'écailles.</p>
-          </div>
-        </article>
-
-        <!-- Scalindra -->
-        <article class="card person" data-name="Scalindra">
-          <div class="thumb">SC</div>
-          <div>
-            <h3>Scalindra</h3>
-            <div class="meta">Impératrice des dragon‑lézards</div>
-            <p class="small muted">Grande et mince, très agile, deux boucles d'oreilles par oreille — inspirée de Bowser.</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="view" style="display:none">
-      <div class="toolbar card" style="display:flex;align-items:center;justify-content:space-between">
-        <div style="display:flex;gap:10px;align-items:center">
-          <input class="search" id="projSearch" placeholder="Filtrer les projets..." />
-          <button class="btn" onclick="addPlaceholder('projects')">+ Ajouter</button>
-        </div>
-        <div class="muted small">3 slots d'objets — idée du jeu Yukomori Kart</div>
-      </div>
-
-      <div class="grid" id="projectsGrid">
-        <article class="card" data-name="Yukomori Kart">
-          <h3>Yukomori Kart</h3>
-          <p class="muted small">Prototype de jeu de course inspiré de Mario Kart Wii. Système de ligue, 3 slots d'objets unitaires, gameplay unique.</p>
-        </article>
-
-        <article class="card" data-name="Platformer">
-          <h3>Plateforme - Clara‑Nico</h3>
-          <p class="muted small">Prototype d'un jeu inspiré de Banjo‑Kazooie / Yooka‑Laylee — humour, personnages distinctifs, bosses avec barre de vie.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- JOURNAL -->
-    <section id="journal" class="view" style="display:none">
-      <div class="toolbar card" style="display:flex;align-items:center;justify-content:space-between">
-        <div class="muted">Journal — notes privées / publiques</div>
-        <button class="btn" onclick="addEntry()">Nouvelle entrée</button>
-      </div>
-
-      <div class="grid" id="journalGrid">
-        <article class="card" data-date="2025-10-09">
-          <h3>Note — 9 Octobre 2025</h3>
-          <p class="muted small">22 jours avant la fursuit — l'attente est longue mais ça va être mieux que Disney. Patience & kek.</p>
-        </article>
-
-        <article class="card" data-date="2025-10-05">
-          <h3>Réflexion — design</h3>
-          <p class="muted small">Transformation en ballon, exploration des émotions et de la tendresse — idées pour une scène clé.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="view" style="display:none">
-      <div class="card">
-        <h3>Contact</h3>
-        <p class="muted small">Ce site est public mais discret. Partage le lien avec les personnes de confiance. Si tu veux conserver la confidentialité, n'ajoute pas le site aux moteurs de recherche (robots.txt) et limite la diffusion du lien.</p>
-        <p class="muted small">Email (obfusqué) : <span id="email">yukomori[at]example[dot]com</span> <button class="linklike" onclick="copyEmail()">Copier</button></p>
-        <p class="muted small">Astuce rapide : si tu veux empêcher l'indexation, ajoute un fichier <code>robots.txt</code> à la racine contenant <code>User-agent: *\nDisallow: /</code> — ou utilise les réglages de la plateforme d'hébergement.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="card" style="padding:12px;display:flex;justify-content:space-between;align-items:center">
-      <div>
-        <strong>Yukomori</strong> — espace perso. Partage avec parcimonie.
-      </div>
-      <div class="muted small">Prototype • Modifie librement • Hébergement recommandé: GitHub Pages</div>
-    </div>
-  </footer>
-
-  <!-- 🔗 Script externe -->
-  <script src="script.js"></script>
 </body>
 </html>
