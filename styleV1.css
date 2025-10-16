@@ -36,7 +36,7 @@ header, section {
 }
 
 /* Cartes personnages */
-/*.card {
+.card {
   background-color: #1a1a2e;
   padding: 1rem;
   margin: 1rem auto;
@@ -48,54 +48,6 @@ header, section {
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
-.card p {
-  font-size: 0.9rem;
-  color: #ccc;
-} */
-
-/* Masquer la scrollbar sur certains navigateurs (optionnel) */
-/*
-.cards-container::-webkit-scrollbar {
-  display: none;
-}
-*/
-
-/* Grille de cartes (max 4 par ligne) */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* max 4 par ligne */
-  gap: 2rem;
-  padding: 2rem;
-  justify-items: center;
-}
-
-/* Cartes individuelles */
-.card {
-  width: 220px;
-  background-color: #1a1a2e;
-  border-radius: 15px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 215, 100, 0.3);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 0.5rem;
-}
-
-.card h3 {
-  color: #ffcc70;
-  margin: 0.5rem 0;
-}
-
 .card p {
   font-size: 0.9rem;
   color: #ccc;
