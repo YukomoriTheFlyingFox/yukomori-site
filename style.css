@@ -71,10 +71,18 @@ header, section {
   scrollbar-width: none;     /* Firefox */
 }
 
+/* Container pour les cartes en grille */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* max 4 par ligne */
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center; /* centre les cartes */
+}
+
 /* Cartes */
 .card {
-  flex: 0 0 auto;           /* Empêche les cartes de se rétrécir */
-  width: 220px;              /* Largeur fixe pour chaque carte */
+  width: 220px;
   background-color: #1a1a2e;
   border-radius: 15px;
   padding: 1rem;
