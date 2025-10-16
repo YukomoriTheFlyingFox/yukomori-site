@@ -66,21 +66,19 @@ header, section {
 .cards-container::-webkit-scrollbar {
   display: none;
 }
+
+/* Grille de cartes (max 4 par ligne) */
 .cards-container {
   -ms-overflow-style: none;  /* IE 10+ */
   scrollbar-width: none;     /* Firefox */
-}
-
-/* Container pour les cartes en grille */
-.cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* max 4 par ligne */
   gap: 2rem;
   padding: 2rem;
-  justify-items: center; /* centre les cartes */
+  justify-items: center;
 }
 
-/* Cartes */
+/* Cartes individuelles */
 .card {
   width: 220px;
   background-color: #1a1a2e;
